@@ -7,7 +7,7 @@
 
 * HTML
 * CSS
-* SGV
+* SVG
 * Javascript - OOP
 
 ### Projeto
