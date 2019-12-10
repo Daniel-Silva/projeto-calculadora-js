@@ -181,14 +181,6 @@ button,
             text-align: center;
         }
 
-         @font-face {
-            font-family: 'ZCOOLQingKeHuangYou';
-            src: url(../font/ZCOOLQingKeHuangYou-Regular.ttf);
-        }
-        svg{
-            font-family: 'ZCOOLQingKeHuangYou', sans-serif;
-        }
-
-        #calculadora-hcode {
+        #calculadora {
             margin: 0 auto;
         }
