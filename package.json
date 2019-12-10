@@ -1,0 +1,19 @@
+{
+  "name": "projeto-calculadora",
+  "version": "1.0.0",
+  "description": "Projeto para desenvolvimento de uma calculadora utilizado SVG e Javascript. O intuito deste projeto é aprimorar meus conhecimentos em Javascript e lógica de programação",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-Silva/projeto-calculadora-js.git"
+  },
+  "author": "Daniel Silva <daniel_dxp@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daniel-Silva/projeto-calculadora-js/issues"
+  },
+  "homepage": "https://github.com/Daniel-Silva/projeto-calculadora-js#readme"
+}
