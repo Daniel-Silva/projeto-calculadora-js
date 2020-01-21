@@ -19,10 +19,16 @@ class CalcController {
 		}, 1000);
 	}
 
+	addEventListenerAll(element, events, callback) {
+		events.split(' ').forEach((event) => {
+			element.addEventListener(event, callback, false);
+		});
+	}
+
 	eventBtn() {
 		let buttons = document.querySelectorAll('#buttons > rect, #buttons > path, #parts > g');
 		buttons.forEach((btn, index) => {
-			btn.addEventListener('click', (event) => {
+			this.addEventListenerAll(btn, 'click drag', (event) => {
 				console.log(btn.className.baseVal.replace('btn-', ''));
 			});
 		});
