@@ -192,3 +192,8 @@ svg {
 #calculadora {
 	margin: 0 auto;
 }
+
+#buttons,
+#parts {
+	cursor: pointer;
+}
