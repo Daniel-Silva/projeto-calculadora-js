@@ -6,30 +6,37 @@ class CalcController {
 		this._time = document.querySelector('#time');
 		this._currentDate;
 		this.initialize();
+		this.eventBtn();
 	}
 
 	/**
      * Other Methods
      */
 	initialize() {
-		this.setDisplayTime();
-		this.setDisplayDate();
+		this.setDisplayDateTime();
 		setInterval(() => {
-			this.setDisplayTime();
+			this.setDisplayDateTime();
 		}, 1000);
 	}
 
-	setDisplayTime() {
-		this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
+	eventBtn() {
+		let buttons = document.querySelectorAll('#buttons > rect, #buttons > path, #parts > g');
+		buttons.forEach((btn, index) => {
+			btn.addEventListener('click', (event) => {
+				console.log(btn.className.baseVal.replace('btn-', ''));
+			});
+		});
 	}
 
-	setDisplayDate() {
+	setDisplayDateTime() {
+		this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
 		this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
 			day: '2-digit',
 			month: 'short',
 			year: 'numeric'
 		});
 	}
+
 	/**
      * Methods GETTER AND SETTER
      */
