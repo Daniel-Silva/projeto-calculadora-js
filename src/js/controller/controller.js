@@ -1,5 +1,7 @@
 class CalcController {
 	constructor() {
+		this._lastOperator = '';
+		this._lastNumber = '';
 		this._operation = [];
 		this._locale = 'pt-BR';
 		this._displayOperation = document.querySelector('#operator');
@@ -54,6 +56,7 @@ class CalcController {
 		setInterval(() => {
 			this.setDisplayDateTime();
 		}, 1000);
+		this.setLastNumberToDisplay();
 	}
 
 	addEventListenerAll(element, events, callback) {
@@ -64,10 +67,14 @@ class CalcController {
 
 	clearAll() {
 		this._operation = [];
+		this.setLastNumberToDisplay();
+		this.setDisplayOperation();
 	}
 
 	clearEntry() {
 		this._operation.pop();
+		this.setLastNumberToDisplay();
+		this.setDisplayOperation();
 	}
 
 	getLastOperation() {
@@ -105,17 +112,18 @@ class CalcController {
 		});
 	}
 
+	setDisplayOperation() {
+		this._displayOperation.innerHTML = this._operation.join(' ');
+	}
+
 	setLastOperation(value) {
 		this._operation[this._operation.length - 1] = value;
 	}
 
 	setLastNumberToDisplay() {
-		let lastNumber;
-		for (let i = this._operation.length - 1; i >= 0; i--) {
-			if (!this.isOperator(this._operation[i])) {
-				lastNumber = this._operation[i];
-				break;
-			}
+		let lastNumber = this.getLastItem(false);
+		if (!lastNumber) {
+			lastNumber = 0;
 		}
 		this.display = lastNumber;
 	}
@@ -179,7 +187,7 @@ class CalcController {
 			}
 		}
 
-		this._displayOperation.innerHTML = this._operation.join(' ');
+		this.setDisplayOperation();
 	}
 
 	execBtn(value) {
