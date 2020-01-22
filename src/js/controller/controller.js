@@ -38,6 +38,13 @@ class CalcController {
 	}
 
 	set display(value) {
+		if (value.toString().length > 10) {
+			this._lastOperator = '';
+			this._lastNumber = '';
+			this._operation = [];
+			this.setError();
+			return false;
+		}
 		this._display.innerHTML = value;
 	}
 
@@ -171,8 +178,6 @@ class CalcController {
 
 		this.setLastNumberToDisplay();
 	}
-
-	copyToClipboard() {}
 
 	initKeyboar() {
 		document.addEventListener('keyup', (e) => {
