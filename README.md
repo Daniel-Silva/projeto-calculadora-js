@@ -10,9 +10,33 @@
 * SVG
 * Javascript - OOP
 
+## Pastas e arquivos
+
+```sh
+├── src
+│   ├── css
+│   │   └── main.css    
+│   ├── font
+│   │   └── ZCOOLQingKeHuangYou-Regular.ttf
+│   ├── img
+│   │   ├── calculadora.ai
+│   │   ├── calculadora.png
+│   │   └── calculadora.svgz
+│   └── js
+│       ├── controller
+│       │   └── controller.js
+│       └── calc.js
+│  
+├── .gitignore
+├── index.html
+├── LICENSE.md
+├── package.json
+└── README.md
+```
+
 ## View Page
 
-*[Calculadora web](https://daniel-silva.github.io/projeto-calculadora-js/)
+[Calculadora web](https://daniel-silva.github.io/projeto-calculadora-js/)
 
 
 ## Projeto
