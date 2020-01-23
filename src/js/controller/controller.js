@@ -209,6 +209,7 @@ class CalcController {
 				case '=':
 					this.calc();
 					break;
+				case '00':
 				case '0':
 				case '1':
 				case '2':
@@ -288,6 +289,7 @@ class CalcController {
 			case 'equal':
 				this.calc();
 				break;
+			case '00':
 			case '0':
 			case '1':
 			case '2':
